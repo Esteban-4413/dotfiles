@@ -1,0 +1,77 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {}
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // Clásico de Neovim: presiona jk rápido para salir al modo normal
+      "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // --- Atajos estilo LazyVim ---
+      "space f f": "file_finder::Toggle",
+      "space s g": "pane::DeploySearch",
+      "space e": "workspace::ToggleLeftDock",
+      "space b d": "pane::CloseActiveItem",
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem",
+
+      // --- Selección e integración Treesitter ---
+      "z K": "editor::SelectLargerSyntaxNode",
+      
+      // --- Sustituto de Flash Jump ---
+      "z k": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Navegar entre paneles divididos (estilo Ctrl+w en Vim)
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "!Editor && !Terminal",
+    "bindings": {
+      "space s": "pane::DeploySearch"
+    },
+    "unbind": {
+      "space /": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "VimControl && vim_mode == normal && !menu",
+    "bindings": {
+      // Surrounds en modo normal
+      "s a": ["workspace::SendKeystrokes", "y s"],
+      "s d": ["workspace::SendKeystrokes", "d s"],
+      "s r": ["workspace::SendKeystrokes", "c s"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // Sigue expandiendo el bloque si presionas z K repetidamente
+      "z K": "editor::SelectLargerSyntaxNode",
+      // Reduce la selección si te pasaste de largo
+      "z J": "editor::SelectSmallerSyntaxNode"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      // Añadir surrounds presionando solo 's'
+      "s": "vim::PushAddSurrounds"
+    }
+  }
+]
+
+

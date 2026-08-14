@@ -1,0 +1,82 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "line_ending": "prefer_lf",
+  "format_on_save": "on",
+  "disable_ai": true,
+  "which_key": {
+    "enabled": true
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": true,
+    "show_nav_history_buttons": true
+  },
+  "tabs": {
+    "file_icons": false,
+    "git_status": false
+  },
+  "title_bar": {
+    "button_layout": "close:minimize,maximize",
+    "show_menus": false,
+    "show_user_picture": true,
+    "show_user_menu": true,
+    "show_branch_status_icon": true
+  },
+  "debugger": {
+    "button": false
+  },
+  "search": {
+    "button": true
+  },
+  "diagnostics": {
+    "button": true
+  },
+  "terminal": {
+    "button": true
+  },
+  "status_bar": {
+    "show_active_file": true,
+    "line_endings_button": false,
+    "cursor_position_button": true,
+    "active_encoding_button": "enabled"
+  },
+  "cli_default_open_behavior": "existing_window",
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "buffer_line_height": "standard",
+  "buffer_font_weight": 400.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "relative_line_numbers": "enabled",
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "preview_tabs": {
+    "enabled": false
+  },
+  "minimap": {
+    "show": "always"
+  },
+  "autosave": "off",
+  "show_edit_predictions": false,
+  "ui_font_size": 16,
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Iced Latte (Blur) [Heavy]",
+    "dark": "Catppuccin Macchiato (Blur) [Light]"
+  },
+  "languages": {
+    "Make": {
+      "hard_tabs": true
+  },
+  
+  }
+  
+}
