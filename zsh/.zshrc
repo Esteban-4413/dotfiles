@@ -111,28 +111,11 @@ export EDITOR="nvim"
 # -- FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# --- Auto-switch FZF Theme (Catppuccin Latte / Mocha) ---
 
-# Detectar si macOS está en Modo Oscuro
-if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
-    # Variante MOCHA (Modo Oscuro)
-    fg="#cdd6f4"           # Texto claro pastel
-    bg_highlight="#585b70" # Resaltado gris medio
-    purple="#cba6f7"       # Acento morado claro
-    blue="#89b4fa"         # Acento azul brillante
-    cyan="#94e2d5"         # Acento turquesa suave
-else
-    # Variante LATTE (Modo Claro)
-    fg="#4c4f69"           # Texto oscuro pesado
-    bg_highlight="#ccd0da" # Resaltado gris claro
-    purple="#8839ef"       # Acento morado fuerte
-    blue="#1e66f5"         # Acento azul profundo
-    cyan="#179299"         # Acento turquesa oscuro
-fi
-
-# Aplicar las opciones con las variables dinámicas y :bold
+# ---- FZF ----
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}' \
---color=fg:${fg},bg:-1,hl:${purple}:bold,fg+:${fg}:bold,bg+:${bg_highlight},hl+:${purple}:bold,info:${blue}:bold,prompt:${cyan}:bold,pointer:${cyan}:bold,marker:${cyan}:bold,spinner:${cyan},header:${cyan}:bold"
+--color=fg:#cdd6f4,bg:-1,hl:#cba6f7:bold,fg+:#cdd6f4:bold,bg+:#585b70,hl+:#cba6f7:bold,info:#89b4fa:bold,prompt:#94e2d5:bold,pointer:#94e2d5:bold,marker:#94e2d5:bold,spinner:#94e2d5,header:#94e2d5:bold"
+
 
 # Hacer que fzf use fd por defecto (ignora binarios y carpetas del sistema)
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude Library'
@@ -173,10 +156,11 @@ _fzf_comprun() {
 }
 
 # ---- Starship ----
+export STARSHIP_CONFIG="$HOME/.dotfiles/starship/.config/starship_mocha.toml"
 eval "$(starship init zsh)"
 
 # ---- BAT (better cat) ---- 
-export BAT_THEME="Catppuccin Frappe"
+export BAT_THEME="Catppuccin Mocha"
 
 
 [ -f "/Users/estebanyepezorozco/.ghcup/env" ] && . "/Users/estebanyepezorozco/.ghcup/env" # ghcup-env

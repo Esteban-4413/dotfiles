@@ -14,7 +14,7 @@ vim.opt.expandtab = true
 vim.opt.cursorline = true -- Enciende el resaltado de la línea actual
 
 -- Forzar colores sintácticos más intensos y soporte de 24-bit color
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 -- Configuración del Cursor: Parpadeo activado
 -- n-v-c: blinkon1000-blinkoff500 -> En modo Normal, Visual y Comando parpadea cada segundo
