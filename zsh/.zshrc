@@ -113,9 +113,6 @@ export EDITOR="nvim"
 
 
 # ---- FZF ----
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}' \
---color=fg:#cdd6f4,bg:-1,hl:#cba6f7:bold,fg+:#cdd6f4:bold,bg+:#585b70,hl+:#cba6f7:bold,info:#89b4fa:bold,prompt:#94e2d5:bold,pointer:#94e2d5:bold,marker:#94e2d5:bold,spinner:#94e2d5,header:#94e2d5:bold"
-
 
 # Hacer que fzf use fd por defecto (ignora binarios y carpetas del sistema)
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git --exclude Library'
@@ -155,12 +152,23 @@ _fzf_comprun() {
   esac
 }
 
+if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+    export STARSHIP_CONFIG="$HOME/.dotfiles/starship/.config/starship_mocha.toml"
+    export BAT_THEME="Catppuccin Mocha"
+    export FZF_DEFAULT_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}' \
+    --color=fg:#cdd6f4,bg:-1,hl:#cba6f7:bold,fg+:#cdd6f4:bold,bg+:#585b70,hl+:#cba6f7:bold,info:#89b4fa:bold,prompt:#94e2d5:bold,pointer:#94e2d5:bold,marker:#94e2d5:bold,spinner:#94e2d5,header:#94e2d5:bold"
+else
+    export STARSHIP_CONFIG="$HOME/.dotfiles/starship/.config/starship_latte.toml"
+    
+    export BAT_THEME="Catppuccin Latte" 
+    
+    export FZF_DEFAULT_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}' \
+    --color=light,fg:#4c4f69,bg:-1,hl:#d20f39:bold,fg+:#4c4f69:bold,bg+:#ccd0da,hl+:#d20f39:bold,info:#1e66f5:bold,prompt:#179299:bold,pointer:#179299:bold,marker:#179299:bold,spinner:#179299,header:#179299:bold"
+fi
+
 # ---- Starship ----
-export STARSHIP_CONFIG="$HOME/.dotfiles/starship/.config/starship_mocha.toml"
 eval "$(starship init zsh)"
 
-# ---- BAT (better cat) ---- 
-export BAT_THEME="Catppuccin Mocha"
 
 
 [ -f "/Users/estebanyepezorozco/.ghcup/env" ] && . "/Users/estebanyepezorozco/.ghcup/env" # ghcup-env

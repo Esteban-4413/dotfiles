@@ -23,7 +23,7 @@ return {
     t("\\implies "),
   }),
 
-  s({ trig = "all", snippetType = "autosnippet" }, {
+  s({ trig = ";all", snippetType = "autosnippet" }, {
     t("\\forall "),
   }),
 
