@@ -3,10 +3,19 @@
   "logo": {
     "type": "file",
     "source": "~/.config/fastfetch/salocat.txt",
+    "color": {
+      "1": "magenta"
+    },
     "padding": {
       "top": 1,
       "left": 2,
       "right": 3
+    }
+  },
+  "display": {
+    "color": {
+      "keys": "magenta",
+      "title": "magenta"
     }
   },
   "modules": [
