@@ -102,9 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.dotfiles/zsh/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 
 export EDITOR="nvim"
 
@@ -180,11 +179,14 @@ alias cd="z"
 
 
 # ---- Eza (better ls) -----
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+# alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ll="eza --color=always --long --git --icons=always"
+alias eza="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 . "$HOME/.local/bin/env"
 
 alias fetch="fastfetch"
+
+alias restart="source ~/.zshrc"
 
 fastfetch
