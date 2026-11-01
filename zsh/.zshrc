@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
+# ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -188,5 +188,14 @@ alias eza="eza --color=always --long --git --no-filesize --icons=always --no-tim
 alias fetch="fastfetch"
 
 alias restart="source ~/.zshrc"
+
+
+alias sioyekconfigk="nvim ~/.dotfiles/sioyek/Library/Application\ Support/sioyek/prefs_user.config"
+alias nvimconfig="nvim ~/.config/nvim"
+alias sioyekeys="nvim ~/.dotfiles/sioyek/Library/Application\ Support/sioyek/keys_user.config"
+alias starshipconfig="nvim ~/.dotfiles/starship/.config"
+alias fetchconfig="nvim ~/.config/fastfetch/config.jsonc"
+
+alias fetch3D="cd ~/projects/fetch && ./fetch"
 
 fastfetch

@@ -4,7 +4,7 @@
     "type": "file",
     "source": "~/.config/fastfetch/salocat.txt",
     "color": {
-      "1": "magenta"
+      "1": "blue"
     },
     "padding": {
       "top": 1,
@@ -13,39 +13,59 @@
     }
   },
   "display": {
+    "separator": " ➜  ",
     "color": {
-      "keys": "magenta",
-      "title": "magenta"
+      "keys": "blue",
+      "title": "blue"
     }
   },
   "modules": [
     "title",
     "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
+    {
+      "type": "os",
+      "key": "󰀵 OS"
+    },
+    {
+      "type": "host",
+      "key": "󰌢 Mac"
+    },
+    {
+      "type": "kernel",
+      "key": "󰒋 Kernel"
+    },
+    {
+      "type": "uptime",
+      "key": "󰔚 Uptime"
+    },
+    {
+      "type": "packages",
+      "key": "󰏖 Packages"
+    },
+    {
+      "type": "shell",
+      "key": " Shell"
+    },
+    {
+      "type": "terminal",
+      "key": " Terminal"
+    },
+    {
+      "type": "cpu",
+      "key": "󰍛 CPU"
+    },
+    {
+      "type": "memory",
+      "key": "󰑭 Memory"
+    },
+    {
+      "type": "disk",
+      "key": "󰋊 Disk"
+    },
+    {
+      "type": "battery",
+      "key": "󰁹 Battery"
+    },
     "break",
     "colors"
   ]
