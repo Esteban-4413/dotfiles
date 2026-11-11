@@ -4,7 +4,6 @@ local t = ls.text_node
 local i = ls.insert_node
 
 return {
-  -- 1. Entornos Matemáticos Rápidos (Autosnippets)
   s({ trig = "mk", snippetType = "autosnippet" }, {
     t("$"),
     i(1),
@@ -23,7 +22,7 @@ return {
     t("\\implies "),
   }),
 
-  s({ trig = ";all", snippetType = "autosnippet" }, {
+  s({ trig = ":forall", snippetType = "autosnippet" }, {
     t("\\forall "),
   }),
 
@@ -44,62 +43,14 @@ return {
     t("\\equiv "),
   }),
 
-  s({ trig = ":res", snippetType = "autosnippet" }, {
-    t("> [!check]- **Resolução**"),
-    t({ "", "> " }),
-    i(1, "Demonstração aqui..."),
-  }),
-
-  -- 5. Linguagens e Alfabetos (Lógica CC)
   s({ trig = "eps", snippetType = "autosnippet" }, {
     t("\\epsilon"),
   }),
 
-  -- Fecho de Kleene (ex: escreves A seguido de ast -> A^*)
-  s({ trig = "ast", snippetType = "autosnippet" }, {
-    t("^*"),
-  }),
+  -- s({ trig = "ast", snippetType = "autosnippet" }, {
+  --   t("^*"),
+  -- }),
 
-  -- Comprimento de uma palavra
-  s({ trig = "len", snippetType = "autosnippet" }, {
-    t("|"),
-    i(1, "x"),
-    t("|"),
-    i(0),
-  }),
-  -- 6. Construtor de Conjuntos
-  s({ trig = ":set", snippetType = "autosnippet" }, {
-    t("\\{ "),
-    i(1, "x \\in X"),
-    t(" \\mid "),
-    i(2, "condição"),
-    t(" \\}"),
-    i(0),
-  }),
-
-  -- 7. Template de Indução Estrutural (Snippet normal, usa Tab para expandir)
-  s(":inducao", {
-    t("> [!note]- **Demonstração por Indução Estrutural**"),
-    t({ "", "> Seja $P(" }),
-    i(1, "e"),
-    t(")$ a condição: "),
-    i(2, "escreve a propriedade aqui"),
-    t("."),
-    t({ "", "> ", "> **1. Base:**" }),
-    t({ "", "> Para $" }),
-    i(3, "b \\in B"),
-    t("$, temos que "),
-    i(4, "prova da base..."),
-    t({ "", "> ", "> **2. Passo Indutivo:**" }),
-    t({
-      "",
-      "> Supondo que $P$ é válida para as hipóteses de indução (H.I.), ao aplicar a operação da regra matemática, obtemos:",
-    }),
-    t({ "", "> " }),
-    i(0),
-  }),
-
-  -- 8. Símbolos de Teoria de Conjuntos
   s({ trig = ":in", snippetType = "autosnippet" }, {
     t("\\in "),
   }),
@@ -124,7 +75,6 @@ return {
     t("\\setminus "),
   }),
 
-  -- 9. Conjuntos de Números
   s({ trig = "NN", snippetType = "autosnippet" }, {
     t("\\mathbb{N}"),
   }),
