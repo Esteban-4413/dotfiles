@@ -10,8 +10,8 @@ vim.opt.expandtab = true
 -- vim.opt.shiftwidth = 4
 -- vim.opt.softtabstop = 4
 
--- Resaltar la línea actual con fuerza
-vim.opt.cursorline = true -- Enciende el resaltado de la línea actual
+-- -- Resaltar la línea actual con fuerza
+-- vim.opt.cursorline = true -- Enciende el resaltado de la línea actual
 
 -- Forzar colores sintácticos más intensos y soporte de 24-bit color
 -- vim.opt.termguicolors = true
@@ -29,12 +29,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
+vim.diagnostic.enable(false)
+
 -- Desactivar diagnósticos e indicaciones visuales SOLO en archivos Markdown (.md)
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
     vim.b.autoformat = false
-    vim.diagnostic.enable(false, { bufnr = 0 })
     vim.opt_local.spell = true
     vim.opt_local.spelllang = "en,es,pt"
   end,
